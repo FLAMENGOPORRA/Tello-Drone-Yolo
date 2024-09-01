@@ -310,7 +310,7 @@ class VideoFeed(mp.Process):
         size_diff = self.selected_target['size_ratio'] - self.desired_size_ratio
         forward = -size_diff / self.desired_size_ratio  # Normalized roughly to [-1, 1]
 
-        # Scale movements (adjust these values as needed)
+        # Scale movements (adjust these values as needed fast correction speeds can cause drone to crash)
         yaw_speed = int(yaw * 50)
         vertical_speed = int(vertical * 50)
         forward_speed = int(forward * 50)
